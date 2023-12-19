@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if(!mounted) return;
     if (session != null) {
-      Navigator.of(context).pushReplacementNamed('/account');
+      Navigator.of(context).pushReplacementNamed('/bottom_navbar');
     } else {
       Navigator.of(context).pushReplacementNamed('/login');
     }
