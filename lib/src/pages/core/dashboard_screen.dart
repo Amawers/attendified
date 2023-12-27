@@ -9,7 +9,6 @@ class DashboardScreen extends StatefulWidget {
   State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-
 ///goldilokcs?
 
 class _DashboardScreenState extends State<DashboardScreen> {
@@ -105,32 +104,37 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
             ),
           ),
-          TextFormField(
-            controller: subjectNameController,
-            decoration: const InputDecoration(hintText: "Enter your subject"),
-          ),
+          // TextFormField(
+          //   controller: subjectNameController,
+          //   decoration: const InputDecoration(hintText: "Enter your subject"),
+          // ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     createSubject();
+          //   },
+          //   child: const Text('Enter subject'),
+          // ),
           ElevatedButton(
-            onPressed: () {
-              createSubject();
-            },
-            child: const Text('Enter subject'),
-          ),
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/class_list');
+              },
+              child: const Text('Create Class'))
         ],
       ),
     );
   }
 
-  Future<void> createSubject() async {
-    try {
-      await supabase
-          .from('subjects')
-          .insert({'subject_name': subjectNameController.text});
-    } on AuthException catch (error) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(error.message),
-      ));
-    } catch (error) {
-      print(error);
-    }
-  }
+  // Future<void> createSubject() async {
+  //   try {
+  //     await supabase
+  //         .from('subjects')
+  //         .insert({'subject_name': subjectNameController.text});
+  //   } on AuthException catch (error) {
+  //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+  //       content: Text(error.message),
+  //     ));
+  //   } catch (error) {
+  //     print(error);
+  //   }
+  // }
 }

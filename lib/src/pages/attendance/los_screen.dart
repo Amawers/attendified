@@ -1,5 +1,5 @@
 import 'package:attendified/main.dart';
-import 'package:attendified/src/pages/los_widget.dart';
+import 'package:attendified/src/pages/attendance/los_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -25,8 +25,11 @@ class _ListOfStudentsScreenState extends State<ListOfStudentsScreen> {
     try {
       String? userId = user?.id;
 
-      final response = await supabase
-          .rpc('get_attendance_data', params: {'p_teacher_name': 'Xendi', 'p_subject_name': 'Information Security Assurance', 'p_section_name': 'R7'});
+      final response = await supabase.rpc('get_attendance_data', params: {
+        'p_teacher_name': 'Xendi',
+        'p_subject_name': 'Information Security Assurance',
+        'p_section_name': 'R7'
+      });
 
       print('THE RUN TIME TYPE in LOS SCREEN: ${response.runtimeType}');
       print('The values: ${response} /n');
@@ -42,14 +45,14 @@ class _ListOfStudentsScreenState extends State<ListOfStudentsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('List of Students'),
-      ),
-      body: const Column(
-        children: [
-          Text('Header'),
-        ],
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('List of Students'),
+        ),
+        body: ListView.builder(
+          itemCount: converted.length,
+          itemBuilder: (context, index) {
+            return ListOfStudentsWidget(first_name: converted[index]['first_name'], last_name: converted[index]['last_name'], attendance_status: converted[index]['attendance_status']);
+          },
+        ));
   }
 }

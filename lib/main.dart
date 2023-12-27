@@ -1,8 +1,9 @@
-import 'package:attendified/src/pages/bottom_navbar_widget.dart';
-import 'package:attendified/src/pages/dashboard_screen.dart';
-import 'package:attendified/src/pages/login_screen.dart';
-import 'package:attendified/src/pages/signup_screen.dart';
-import 'package:attendified/src/pages/splash_screen.dart';
+import 'package:attendified/src/pages/common/bottom_navbar_widget.dart';
+import 'package:attendified/src/pages/creating_class/create_class.dart';
+import 'package:attendified/src/pages/core/dashboard_screen.dart';
+import 'package:attendified/src/pages/authentication/login_screen.dart';
+import 'package:attendified/src/pages/authentication/signup_screen.dart';
+import 'package:attendified/src/pages/core/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
           '/signup': (_) => SignupScreen(),
           '/dashboard': (_) => DashboardScreen(),
           '/bottom_navbar': (_) => BottomNavBar(),
+          '/class_list': (_) => ClassList()
         });
   }
 }

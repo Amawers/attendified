@@ -1,7 +1,7 @@
-import 'package:attendified/src/pages/dashboard_screen.dart';
-import 'package:attendified/src/pages/los_screen.dart';
-import 'package:attendified/src/pages/scan_qr_screen.dart';
-import 'package:attendified/src/pages/settings_screen.dart';
+import 'package:attendified/src/pages/core/dashboard_screen.dart';
+import 'package:attendified/src/pages/attendance/los_screen.dart';
+import 'package:attendified/src/pages/scanning/scan_qr_screen.dart';
+import 'package:attendified/src/pages/core/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 
