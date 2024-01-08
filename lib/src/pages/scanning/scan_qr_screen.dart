@@ -1,5 +1,5 @@
 import 'package:attendified/main.dart';
-import 'package:attendified/src/pages/scanning/scan_qr_overlay.dart';
+import 'package:attendified/src/pages/scanning/scan_qr_overlay_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 

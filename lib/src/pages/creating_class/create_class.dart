@@ -43,6 +43,10 @@ class _ClassListState extends State<ClassList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/bottom_navbar', (route) => false)
+        ),
         title: const Text('Class List'),
       ),
       body: ListView.builder(

@@ -37,7 +37,7 @@ class _ListOfStudentsScreenState extends State<ListOfStudentsScreen> {
           await supabase.rpc('get_subjects_for_teacher');
       final unconvertedSections =
           await supabase.rpc('get_sections_for_teacher');
-
+      
       print('data type of response ${unconvertedSubjects.runtimeType}');
 
       setState(() {

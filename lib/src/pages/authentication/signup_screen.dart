@@ -14,6 +14,8 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController departmentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,18 +35,26 @@ class _SignupScreenState extends State<SignupScreen> {
                 controller: passwordController,
                 obscureText: true,
                 decoration: const InputDecoration(hintText: "Enter Password")),
-           /*! Implement this to the account settings */
-            // TextFormField(
-            //     controller: firstNameController,
-            //     decoration:
-            //         const InputDecoration(hintText: "Enter First Name")),
-            // TextFormField(
-            //     controller: lastNameController,
-            //     decoration: const InputDecoration(hintText: "Enter Last Name")),
-
+            TextFormField(
+                controller: firstNameController,
+                decoration:
+                    const InputDecoration(hintText: "Enter First Name")),
+            TextFormField(
+                controller: lastNameController,
+                decoration: const InputDecoration(hintText: "Enter Last Name")),
+            TextFormField(
+                controller: phoneNumberController,
+                decoration:
+                    const InputDecoration(hintText: "Enter Phone Number")),
+            TextFormField(
+                controller: departmentController,
+                decoration:
+                    const InputDecoration(hintText: "Enter Department")),
             GestureDetector(
               onTap: () {
                 onTapBtnSignUp();
+                              print('tuplok na');
+
               },
               child: Container(
                 decoration: BoxDecoration(
@@ -69,7 +79,32 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
               ),
-            )
+            ),
+            Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/login');
+                        },
+                        child: const Text.rich(TextSpan(
+                            text: "Already have an account?",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 193, 0, 0),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: " Sign In",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 0, 193, 29),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ])),
+                      ),
+                    ),
           ]),
     );
   }
@@ -80,15 +115,19 @@ class _SignupScreenState extends State<SignupScreen> {
         email: emailController.text,
         password: passwordController.text,
         /*implement later in account settings*/
-        // data: {
-        //   'first_name': firstNameController.text,
-        //   'last_name': lastNameController.text,
-        // },
+        data: {
+          'first_name': firstNameController.text,
+          'last_name': lastNameController.text,
+          'phone_number': phoneNumberController.text,
+          'department': departmentController.text
+        },
       );
+              print('Done');
+
 
       if (response != null) {
         if (context.mounted) {
-          Navigator.pushReplacementNamed(context, '/dashboard');
+          Navigator.pushReplacementNamed(context, '/');
         }
       }
     } on AuthException catch (error) {

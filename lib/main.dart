@@ -3,7 +3,9 @@ import 'package:attendified/src/pages/creating_class/create_class.dart';
 import 'package:attendified/src/pages/core/dashboard_screen.dart';
 import 'package:attendified/src/pages/authentication/login_screen.dart';
 import 'package:attendified/src/pages/authentication/signup_screen.dart';
+import 'package:attendified/src/pages/creating_students/create_students_screen.dart';
 import 'package:attendified/src/pages/core/splash_screen.dart';
+import 'package:attendified/src/pages/creating_students/create_students_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -42,11 +44,12 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: <String, WidgetBuilder>{
           '/': (_) => SplashScreen(),
-          '/login': (_) => const LogInScreen(),
+          '/login': (_) =>  LogInScreen(),
           '/signup': (_) => SignupScreen(),
           '/dashboard': (_) => DashboardScreen(),
           '/bottom_navbar': (_) => BottomNavBar(),
-          '/class_list': (_) => ClassList()
+          '/class_list': (_) => ClassList(),
+          '/students_list': (_) => StudentsList()
         });
   }
 }

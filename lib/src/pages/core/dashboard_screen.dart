@@ -118,7 +118,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/class_list');
               },
-              child: const Text('Create Class'))
+              child: const Text('Subjects List')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/students_list');
+              },
+              child: const Text('Student List'))
         ],
       ),
     );
