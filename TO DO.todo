@@ -4,6 +4,9 @@ class in the main class, test this implementation
 
 ☐ Create a class and store the constant values like colors and font sizes
 
+☐ Create a buttons instead for attendance report in the dashboard, delete the
+LOS navigation item
+
 ☐ Complete Splash screen
 
 ☐ Complete Log In screen
@@ -12,10 +15,16 @@ class in the main class, test this implementation
 
 ☐ Filtering feature for the subject, section, if absent/present/late
 
+☐ Create feature to add a student into a section
+
+☐ Enhance UI of scanning to include if it successfully scanned something
+
 ----------------- BACKEND -------------------
 ☐ Implement backend for student list for a specific teacher
 
 ☐ Implement backend for attendance when QR scanned, it should compare the
 values to the list of student in order to be present
 
-☐ Implement backend for filtering feature
+☐ Implement backend for filtering feature in attendance
+
+☐ Implement backend for creating student feature

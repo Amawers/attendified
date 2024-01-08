@@ -1,5 +1,5 @@
 import 'package:attendified/src/pages/common/bottom_navbar_widget.dart';
-import 'package:attendified/src/pages/creating_class/create_class.dart';
+import 'package:attendified/src/pages/creating_class/create_class_screen.dart';
 import 'package:attendified/src/pages/core/dashboard_screen.dart';
 import 'package:attendified/src/pages/authentication/login_screen.dart';
 import 'package:attendified/src/pages/authentication/signup_screen.dart';
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
           '/dashboard': (_) => DashboardScreen(),
           '/bottom_navbar': (_) => BottomNavBar(),
           '/class_list': (_) => ClassList(),
-          '/students_list': (_) => StudentsList()
+          '/students_list': (_) => StudentsList(subject_name: '', subject_code: '')
         });
   }
 }

@@ -9,8 +9,6 @@ class DashboardScreen extends StatefulWidget {
   State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-///goldilokcs?
-
 class _DashboardScreenState extends State<DashboardScreen> {
   final User? user = supabase.auth.currentUser;
 
@@ -119,11 +117,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Navigator.pushReplacementNamed(context, '/class_list');
               },
               child: const Text('Subjects List')),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/students_list');
-              },
-              child: const Text('Student List'))
+          // ElevatedButton(
+          //     onPressed: () {
+          //       Navigator.pushReplacementNamed(context, '/students_list');
+          //     },
+          //     child: const Text('Student List'))
         ],
       ),
     );
